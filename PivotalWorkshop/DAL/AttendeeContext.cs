@@ -11,6 +11,8 @@ namespace PivotalWorkshop.DAL
     [DbConfigurationType(typeof(MySql.Data.Entity.MySqlEFConfiguration))]
     public class AttendeeContext : DbContext
     {
+        public AttendeeContext(string cs) : base(cs) { }
+
         public DbSet<Attendee> Attendees { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

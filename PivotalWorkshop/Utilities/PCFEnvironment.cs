@@ -26,6 +26,15 @@ namespace PivotalWorkshop.Utilities
                 csbuilder.Add("pwd", BoundServices["p-mysql"][0]["credentials"]["password"].ToString());
                 csbuilder.Add("database", BoundServices["p-mysql"][0]["credentials"]["name"].ToString());
                 _connectionString = csbuilder.ToString();
+            } else if (BoundServices.GetValue("p.mysql") != null)
+            {
+                MySqlConnectionStringBuilder csbuilder = new MySqlConnectionStringBuilder();
+                csbuilder.Add("server", BoundServices["p.mysql"][0]["credentials"]["hostname"].ToString());
+                csbuilder.Add("port", BoundServices["p.mysql"][0]["credentials"]["port"].ToString());
+                csbuilder.Add("uid", BoundServices["p.mysql"][0]["credentials"]["username"].ToString());
+                csbuilder.Add("pwd", BoundServices["p.mysql"][0]["credentials"]["password"].ToString());
+                csbuilder.Add("database", BoundServices["p.mysql"][0]["credentials"]["name"].ToString());
+                _connectionString = csbuilder.ToString();
             }
         }
 

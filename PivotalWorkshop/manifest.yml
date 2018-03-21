@@ -4,4 +4,4 @@ applications:
   host: attendees-rr
   memory: 512m
   stack: windows2012R2
-  buildpack: binary_buildpack
+  buildpack: hwc_buildpack

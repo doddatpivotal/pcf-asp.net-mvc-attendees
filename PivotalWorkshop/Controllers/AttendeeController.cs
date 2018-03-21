@@ -7,12 +7,13 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using PivotalWorkshop.Utilities;
 
 namespace PivotalWorkshop.Controllers
 {
     public class AttendeeController : Controller
     {
-        private AttendeeContext db = new AttendeeContext();
+        private AttendeeContext db = new AttendeeContext(PCFEnvironment.DbConnectionString);
 
         // GET: Attendee
         public ViewResult Index()
